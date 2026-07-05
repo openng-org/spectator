@@ -12,7 +12,9 @@ import { TranslateService } from '../translate.service';
       </h2>
     </div>
 
-    <div *ngIf="!widthRaw" style="color:red">widthRaw is not set</div>
+    @if (!widthRaw) {
+      <div style="color:red">widthRaw is not set</div>
+    }
     <div>Width is: {{ width }}</div>
   `,
   standalone: false,

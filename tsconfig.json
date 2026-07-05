@@ -17,10 +17,6 @@
     "typeRoots": [
       "node_modules/@types"
     ],
-    "lib": [
-      "es2018",
-      "dom"
-    ],
     "paths": {
       "@openng/spectator": [
         "projects/spectator/src/public_api.ts"

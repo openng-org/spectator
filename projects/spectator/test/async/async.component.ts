@@ -4,7 +4,11 @@ import { QueryService } from '../query.service';
 
 @Component({
   selector: 'app-async',
-  template: ` <p *ngIf="show$ | async">async works!</p> `,
+  template: `
+    @if (show$ | async) {
+      <p>async works!</p>
+    }
+  `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   styles: [],
   standalone: false,

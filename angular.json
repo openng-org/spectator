@@ -40,7 +40,9 @@
         },
         "test-jest": {
           "builder": "@angular-builders/jest:run",
-          "options": {}
+          "options": {
+            "zoneless": false
+          }
         },
         "test-vitest": {
           "builder": "@analogjs/vitest-angular:test"

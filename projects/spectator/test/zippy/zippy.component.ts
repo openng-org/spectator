@@ -17,9 +17,11 @@ import { QueryService } from '../query.service';
       <div (click)="toggle()" class="zippy__title" (keyup.enter)="toggle()" (keyup.esc)="toggle()">
         <span class="arrow">{{ visible ? 'Close' : 'Open' }}</span> {{ title }}
       </div>
-      <div *ngIf="visible" class="zippy__content">
-        <ng-content></ng-content>
-      </div>
+      @if (visible) {
+        <div class="zippy__content">
+          <ng-content></ng-content>
+        </div>
+      }
       <input type="checkbox" checked="true" class="checkbox" />
       <div class="color">{{ options.color }}</div>
     </div>

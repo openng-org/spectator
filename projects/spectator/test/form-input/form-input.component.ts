@@ -10,7 +10,9 @@ import { FormGroup } from '@angular/forms';
     <div [formGroup]="subnetControl">
       <input formControlName="name" />
     </div>
-    <p *ngIf="enableSubnet"></p>
+    @if (enableSubnet) {
+      <p></p>
+    }
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false,

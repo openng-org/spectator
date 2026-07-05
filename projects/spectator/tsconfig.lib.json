@@ -13,10 +13,6 @@
       "jasmine",
       "jest",
       "node"
-    ],
-    "lib": [
-      "dom",
-      "es2018"
     ]
   },
   "angularCompilerOptions": {
