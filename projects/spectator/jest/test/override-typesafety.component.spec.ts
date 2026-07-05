@@ -1,10 +1,11 @@
 import { createHostFactory, SpectatorHost } from '@openng/spectator';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'my-component',
   template: '',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 class MyComponent {}

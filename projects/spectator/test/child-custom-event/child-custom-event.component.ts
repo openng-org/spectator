@@ -1,8 +1,9 @@
-import { Component, Output, output, EventEmitter } from '@angular/core';
+import { Component, Output, output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-child-custom-event',
   template: ` <p>Custom child</p> `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ChildCustomEventComponent {

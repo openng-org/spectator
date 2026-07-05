@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { DropzoneComponent } from './dropzone.component';
 import { DownloadComponent } from '../download/download.component';
 import { createHostFactory, SpectatorHost } from '@openng/spectator';
@@ -7,6 +7,7 @@ import { createHostFactory, SpectatorHost } from '@openng/spectator';
 @Component({
   selector: 'host',
   template: '',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 class HostComponent {

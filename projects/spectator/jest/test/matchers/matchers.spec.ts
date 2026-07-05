@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy } from '@angular/core';
 import { byRole } from '@openng/spectator';
 import { createComponentFactory, Spectator } from '@openng/spectator/jest';
 
@@ -61,6 +61,7 @@ interface Dummy {
     </select>
     <input type="text" role="article" aria-label="toBeFocused" />
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class MatchersComponent {}

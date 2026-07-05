@@ -1,5 +1,5 @@
 import { createComponentFactory, createHostFactory, Spectator, SpectatorHost } from '@openng/spectator';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { QueryService } from '../../test/query.service';
 import { overrideComponents } from '../../src/lib/spectator/create-factory';
 
@@ -7,6 +7,7 @@ import { overrideComponents } from '../../src/lib/spectator/create-factory';
 @Component({
   selector: `app-standalone-with-dependency`,
   template: `<div id="standalone">Standalone component with dependency!</div>`,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: true,
 })
 export class StandaloneComponentWithDependency {
@@ -18,6 +19,7 @@ export class StandaloneComponentWithDependency {
   template: `<div id="standalone">Standalone component with import!</div>
     <app-standalone-with-dependency></app-standalone-with-dependency>`,
   imports: [StandaloneComponentWithDependency],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: true,
 })
 export class StandaloneWithImportsComponent {}
@@ -25,6 +27,7 @@ export class StandaloneWithImportsComponent {}
 @Component({
   selector: `app-standalone-with-dependency`,
   template: `<div id="standaloneWithDependency">Standalone component with override dependency!</div>`,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: true,
 })
 export class MockStandaloneComponentWithDependency {
@@ -34,6 +37,7 @@ export class MockStandaloneComponentWithDependency {
 @Component({
   selector: `app-non-standalone`,
   template: `<div id="standalone">Non standalone</div>`,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class MockNonStandaloneComponent {

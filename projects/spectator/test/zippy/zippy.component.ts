@@ -1,4 +1,4 @@
-import { Component, HostListener, Input } from '@angular/core';
+import { Component, HostListener, Input, ChangeDetectionStrategy } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 import { QueryService } from '../query.service';
@@ -26,6 +26,7 @@ import { QueryService } from '../query.service';
       <div class="color">{{ options.color }}</div>
     </div>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ZippyComponent {

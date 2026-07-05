@@ -1,5 +1,5 @@
 import { SpectatorHost, createHostFactory } from '@openng/spectator/jest';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 import { FgComponent } from '../../../test/fg/fg.component';
@@ -7,6 +7,7 @@ import { FgComponent } from '../../../test/fg/fg.component';
 @Component({
   selector: 'app-custom-host',
   template: '',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 class CustomHostComponent {

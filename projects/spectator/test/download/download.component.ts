@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'lib-download',
@@ -7,6 +7,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
     <h1 (click)="onDownloadClick()">Download comp</h1>
     >
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class DownloadComponent {

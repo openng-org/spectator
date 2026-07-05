@@ -1,10 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 /* eslint-disable @angular-eslint/template/no-call-expression */
 
 @Component({
   selector: 'app-set-input',
   template: ``,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class SetInputComponent {

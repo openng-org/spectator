@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-dom-selectors-nested-components',
   template: `<p id="by-text-p">Nested Component</p>`,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: true,
 })
 export class DomSelectorsNestedComponent {
@@ -61,6 +62,7 @@ export class DomSelectorsNestedComponent {
     </div>
   `,
   standalone: false,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [DomSelectorsNestedComponent],
 })
 export class DomSelectorsComponent {}

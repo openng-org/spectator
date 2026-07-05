@@ -1,10 +1,11 @@
-import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
 
 /* eslint-disable @angular-eslint/template/no-call-expression */
 
 @Component({
   selector: 'app-simple-changes',
   template: ``,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class SimpleChangesComponent implements OnInit, OnChanges {

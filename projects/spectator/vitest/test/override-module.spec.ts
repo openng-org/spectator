@@ -1,4 +1,4 @@
-import { Component, Directive, HostBinding, NgModule } from '@angular/core';
+import { Component, Directive, HostBinding, NgModule, ChangeDetectionStrategy } from '@angular/core';
 import { Spectator, SpectatorDirective, SpectatorHost } from '@openng/spectator';
 import { createComponentFactory, createDirectiveFactory, createHostFactory } from '@openng/spectator/vitest';
 
@@ -7,6 +7,7 @@ import { AveragePipe } from '../../test/pipe/average.pipe';
 @Component({
   selector: 'test-comp',
   template: '<div someDirective>{{ prop | avg }}</div>',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 class TestComponent {

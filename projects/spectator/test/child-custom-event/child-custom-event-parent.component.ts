@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-child-custom-event-parent',
@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
     />
     <p>{{ eventValue }}</p>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ChildCustomEventParentComponent {

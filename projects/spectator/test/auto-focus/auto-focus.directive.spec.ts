@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { createHostFactory, createDirectiveFactory, SpectatorDirective, SpectatorHost } from '@openng/spectator';
 
 import { AutoFocusDirective } from './auto-focus.directive';
@@ -6,6 +6,7 @@ import { AutoFocusDirective } from './auto-focus.directive';
 @Component({
   selector: 'custom-host',
   template: '',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 class CustomHostComponent {

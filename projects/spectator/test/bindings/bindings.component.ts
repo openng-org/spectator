@@ -1,16 +1,16 @@
-import { Component, EventEmitter, Input, input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, input, Output, ChangeDetectionStrategy } from '@angular/core';
 
-@Component({ template: '' })
+@Component({ changeDetection: ChangeDetectionStrategy.Eager, template: '' })
 export class TestCompInput {
   @Input() value = 0;
 }
 
-@Component({ template: '<button (click)="event.emit()">Click me</button>' })
+@Component({ changeDetection: ChangeDetectionStrategy.Eager, template: '<button (click)="event.emit()">Click me</button>' })
 export class TestCompOutput {
   @Output() event = new EventEmitter<void>();
 }
 
-@Component({ template: 'Value: {{value}}' })
+@Component({ changeDetection: ChangeDetectionStrategy.Eager, template: 'Value: {{value}}' })
 export class TestCompTwoWayBinding {
   @Input() value = '';
   @Output() valueChange = new EventEmitter<string>();
@@ -19,6 +19,7 @@ export class TestCompTwoWayBinding {
 @Component({
   selector: 'my-host-comp',
   template: '...',
+  changeDetection: ChangeDetectionStrategy.Eager,
   host: { '[class.checked]': 'isChecked()' },
 })
 export class TestCompHost {

@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy } from '@angular/core';
+import { Component, Input, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 
 import { TeardownError } from './error';
 import { TeardownService } from './teardown.service';
@@ -6,6 +6,7 @@ import { TeardownService } from './teardown.service';
 @Component({
   selector: 'app-teardown',
   template: '',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class TeardownComponent implements OnDestroy {

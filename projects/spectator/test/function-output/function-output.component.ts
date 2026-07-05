@@ -1,9 +1,10 @@
-import { Component, EventEmitter, input, Output, output, ɵINPUT_SIGNAL_BRAND_WRITE_TYPE } from '@angular/core';
+import { Component, EventEmitter, input, Output, output, ɵINPUT_SIGNAL_BRAND_WRITE_TYPE, ChangeDetectionStrategy } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
 
 @Component({
   selector: 'app-function-output',
   template: ` <button (click)="buttonClicked()">Emit function output</button> `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: true,
 })
 export class FunctionOutputComponent {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-overlay-container',
@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
     <app-overlay-content (customEvent)="onCustomEvent($event)"></app-overlay-content>
     <p class="value">{{ eventValue }}</p>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class OverlayContainerComponent {

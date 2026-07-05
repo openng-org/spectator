@@ -1,6 +1,6 @@
 import { toBeVisible, toBePartial } from '@openng/spectator';
 import { createComponentFactory, Spectator } from '@openng/spectator/vitest';
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy } from '@angular/core';
 
 interface Dummy {
   lorem: string;
@@ -21,6 +21,7 @@ interface Dummy {
     <custom-element style="visibility: hidden"></custom-element>
     <div id="computed-style"></div>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class MatchersComponent {}

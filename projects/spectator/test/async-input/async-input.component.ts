@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-async-input',
@@ -7,6 +7,7 @@ import { Component, Input } from '@angular/core';
       <div>Hello</div>
     }
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class AsyncInputComponent {

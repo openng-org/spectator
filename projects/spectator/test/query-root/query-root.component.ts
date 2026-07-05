@@ -1,11 +1,12 @@
 import { Overlay, OverlayModule, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-query-root',
   standalone: false,
   imports: [OverlayModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: `
     <p id="by-text-p">By text</p>
     <p id="by-text-p-2">By text</p>
@@ -62,6 +63,7 @@ export class QueryRootComponent implements OnDestroy {
 @Component({
   selector: 'app-query-root-overlay',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   template: ` <p>{{ title }}</p> `,
 })
 export class QueryRootOverlayComponent {

@@ -1,4 +1,4 @@
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { createComponentFactory } from '@openng/spectator';
 
 @Injectable()
@@ -20,6 +20,7 @@ class SomeViewService {
   template: ``,
   providers: [SomeService],
   viewProviders: [SomeViewService],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class SomeComponent implements OnInit {

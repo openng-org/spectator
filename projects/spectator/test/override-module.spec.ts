@@ -1,4 +1,4 @@
-import { Component, Directive, HostBinding, NgModule } from '@angular/core';
+import { Component, Directive, HostBinding, NgModule, ChangeDetectionStrategy } from '@angular/core';
 import {
   createComponentFactory,
   createDirectiveFactory,
@@ -13,6 +13,7 @@ import { AveragePipe } from './pipe/average.pipe';
 @Component({
   selector: 'test-comp',
   template: '<div someDirective>{{ prop | avg }}</div>',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 class TestComponent {

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 
 import { QueryService } from '../query.service';
 
@@ -14,6 +14,7 @@ import { QueryService } from '../query.service';
   `,
   providers: [QueryService],
   styles: [],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ButtonComponent {

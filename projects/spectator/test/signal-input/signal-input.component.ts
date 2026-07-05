@@ -1,4 +1,4 @@
-import { Component, input, ɵINPUT_SIGNAL_BRAND_WRITE_TYPE } from '@angular/core';
+import { Component, input, ɵINPUT_SIGNAL_BRAND_WRITE_TYPE, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-signal-input',
@@ -7,6 +7,7 @@ import { Component, input, ɵINPUT_SIGNAL_BRAND_WRITE_TYPE } from '@angular/core
       <div id="text">Hello</div>
     }
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: true,
 })
 export class SignalInputComponent {

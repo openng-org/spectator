@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-calc',
@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
     <textarea #b class="b"></textarea>
     <p class="result">{{ a.value + b.value }}</p>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class CalcTextAreaComponent {}

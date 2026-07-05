@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 export interface Dummy {
   label: string;
@@ -19,6 +19,7 @@ export interface Dummy {
     <div id="attr-check" label="test label"></div>
     <img src="http://localhost:8080/assets/myimg.jpg" />
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class MatcherEnhancementsComponent {

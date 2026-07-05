@@ -1,8 +1,10 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'lib-openng-host-component',
   template: '',
+  // eslint-disable-next-line @angular-eslint/prefer-on-push-component-change-detection
+  changeDetection: ChangeDetectionStrategy.Eager,
   // eslint-disable-next-line @angular-eslint/prefer-standalone
   standalone: false,
 })

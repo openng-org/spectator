@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { ChildServiceService } from '../child-service.service';
 
@@ -6,6 +6,7 @@ import { ChildServiceService } from '../child-service.service';
   selector: 'app-child',
   template: ` <p>child works!</p> `,
   styles: [],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ChildComponent {

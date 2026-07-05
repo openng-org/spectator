@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -19,16 +18,16 @@
     ],
     "paths": {
       "@openng/spectator": [
-        "projects/spectator/src/public_api.ts"
+        "./projects/spectator/src/public_api.ts"
       ],
       "@openng/spectator/jest": [
-        "projects/spectator/jest/src/public_api.ts"
+        "./projects/spectator/jest/src/public_api.ts"
       ],
       "@openng/spectator/vitest": [
-        "projects/spectator/vitest/src/public_api.ts"
+        "./projects/spectator/vitest/src/public_api.ts"
       ],
       "@openng/spectator/internals": [
-        "projects/spectator/internals/src/public_api.ts"
+        "./projects/spectator/internals/src/public_api.ts"
       ],
       // workaround for: https://github.com/rollup/rollup/issues/5199
       "rollup/parseAst": [

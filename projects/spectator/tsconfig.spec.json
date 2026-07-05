@@ -6,19 +6,18 @@
       "jasmine",
       "node"
     ],
-    "baseUrl": ".",
     "paths": {
       "@openng/spectator": [
-        "src/public_api.ts"
+        "./src/public_api.ts"
       ],
       "@openng/spectator/jest": [
-        "jest/src/public_api.ts"
+        "./jest/src/public_api.ts"
       ],
       "@openng/spectator/vitest": [
-        "vitest/src/public_api.ts"
+        "./vitest/src/public_api.ts"
       ],
       "@openng/spectator/internals": [
-        "internals/src/public_api.ts"
+        "./internals/src/public_api.ts"
       ]
     }
   },
@@ -28,5 +27,14 @@
   "include": [
     "test/**/*.spec.ts",
     "src/lib/matchers-types.ts",
-  ]
+  ],
+  "angularCompilerOptions": {
+    "extendedDiagnostics": {
+      "checks": {
+        "nullishCoalescingNotNullable": "suppress",
+        "optionalChainNotNullable": "suppress"
+      }
+    },
+    "strictTemplates": false
+  }
 }

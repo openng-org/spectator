@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { WidgetService } from '../widget.service';
 
@@ -6,6 +6,7 @@ import { WidgetService } from '../widget.service';
   selector: 'app-widget',
   template: ` <button (click)="onClick()">Click</button> `,
   styles: [],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class WidgetComponent implements OnInit {

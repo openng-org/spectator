@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { createComponentFactory, Spectator } from '@openng/spectator';
 
 @Component({
@@ -7,6 +7,7 @@ import { createComponentFactory, Spectator } from '@openng/spectator';
   host: {
     '[class.bar]': 'bar',
   },
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 class FooComponent {

@@ -1,9 +1,10 @@
 /* eslint-disable */
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'lib-dropzone',
   template: ` <lib-download (selectedFile)="onTemplateSelectedForDownload($event)"></lib-download> `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class DropzoneComponent {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { fakeAsync } from '@angular/core/testing';
 import { SpectatorHost, byText, createHostFactory } from '@openng/spectator';
 
@@ -178,6 +178,7 @@ describe('ZippyComponent with default template', () => {
 @Component({
   selector: 'app-custom-host',
   template: '',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 class CustomHostComponent {

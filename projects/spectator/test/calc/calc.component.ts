@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-calc',
@@ -13,6 +13,7 @@ import { Component } from '@angular/core';
     </label>
     <p class="result">{{ a.value + b.value }}</p>
   `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class CalcComponent {}

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { SpectatorPipe, createPipeFactory } from '@openng/spectator';
 
 import { AveragePipe } from './average.pipe';
@@ -6,6 +6,7 @@ import { StatsService } from './stats.service';
 
 @Component({
   template: ` <div>{{ prop | avg }}</div> `,
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 class CustomHostComponent {

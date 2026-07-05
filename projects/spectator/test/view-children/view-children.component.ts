@@ -1,4 +1,4 @@
-import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { Component, OnInit, QueryList, ViewChild, ViewChildren, ChangeDetectionStrategy } from '@angular/core';
 
 import { ChildComponent } from '../child/child.component';
 
@@ -23,6 +23,7 @@ import { ChildComponent } from '../child/child.component';
       }
     `,
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ViewChildrenComponent implements OnInit {

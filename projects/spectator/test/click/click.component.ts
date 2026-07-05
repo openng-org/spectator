@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { debounce } from 'helpful-decorators';
 
 @Component({
@@ -8,6 +8,7 @@ import { debounce } from 'helpful-decorators';
     <p>{{ name }}</p>
   `,
   styles: [],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class ClickComponent {
