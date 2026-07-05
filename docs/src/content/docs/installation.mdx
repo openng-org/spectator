@@ -3,6 +3,8 @@ id: installation
 title: Installation
 ---
 
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
 > A Powerful Tool to Simplify Your Angular Tests
 
 Spectator helps you get rid of all the boilerplate grunt work, leaving you with readable, sleek and streamlined unit tests.
@@ -21,10 +23,24 @@ Spectator helps you get rid of all the boilerplate grunt work, leaving you with 
 - ✅ Strongly typed
 - ✅ Jest Support
 
-### NPM
+## Package Manager
 
-`npm install @openng/spectator --save-dev`
+Choose your preferred package manager to install Spectator:
 
-### Yarn
-
-`yarn add @openng/spectator --dev`
+<Tabs>
+  <TabItem label="npm">
+    ```bash
+    npm install @openng/spectator --save-dev
+    ```
+  </TabItem>
+  <TabItem label="pnpm">
+    ```bash
+    pnpm add -D @openng/spectator
+    ```
+  </TabItem>
+  <TabItem label="yarn">
+    ```bash
+    yarn add @openng/spectator --dev
+    ```
+  </TabItem>
+</Tabs>
