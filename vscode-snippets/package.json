@@ -2,7 +2,7 @@
   "name": "spectator-snippets",
   "displayName": "Angular Spectator Snippets",
   "description": "Code snippets for Angular Spectator",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "publisher": "OpenNG",
   "icon": "logo.png",
   "engines": {

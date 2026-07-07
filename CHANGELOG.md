@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+---
+
+> **Note:** This fork ([`@openng/spectator`](https://www.npmjs.com/package/@openng/spectator)) restarts versioning at `1.0.0`. All entries below this line predate the fork and document the history of the original [`@ngneat/spectator`](https://www.npmjs.com/package/@ngneat/spectator) package, from which this project was forked. Their version numbers and links refer to that original package (whose GitHub repository has since been removed).
+
+---
+
 ## [22.1.0](https://github.com/ngneat/spectator/compare/v22.0.0...v22.1.0) (2025-11-02)
 
 

@@ -1,17 +1,17 @@
 {
   "name": "@openng/spectator",
   "description": "A powerful tool to simplify your Angular tests",
-  "author": "OpenNg Foundation",
-  "version": "22.1.0",
+  "author": "OpenNG",
+  "version": "1.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/openng-foundation/spectator"
+    "url": "https://github.com/openng-org/spectator"
   },
   "bugs": {
-    "url": "https://github.com/openng-foundation/spectator/spectator/issues"
+    "url": "https://github.com/openng-org/spectator/issues"
   },
-  "homepage": "https://github.com/openng-foundation/spectator/spectator#readme",
+  "homepage": "https://github.com/openng-org/spectator#readme",
   "keywords": [
     "angular unit test",
     "angular simplified tests",
