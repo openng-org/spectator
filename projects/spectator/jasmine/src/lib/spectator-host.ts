@@ -26,7 +26,7 @@ export class SpectatorHost<C, H = HostComponent> extends BaseSpectatorHost<C, H>
 export type SpectatorHostFactory<C, H> = <HP>(
   template: string,
   overrides?: SpectatorHostOverrides<H, HP>,
-) => SpectatorHost<C, H & HostComponent extends H ? HP : unknown>;
+) => SpectatorHost<C, H & (HostComponent extends H ? HP : unknown)>;
 
 /**
  * @publicApi

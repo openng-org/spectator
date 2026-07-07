@@ -1,5 +1,5 @@
-import { ActivatedRouteStub } from '../../src/lib/spectator-routing/activated-route-stub';
-import { RouteOptions } from '../../src/lib/spectator-routing/route-options';
+import { ActivatedRouteStub } from '../../core/src/lib/spectator-routing/activated-route-stub';
+import { RouteOptions } from '../../core/src/lib/spectator-routing/route-options';
 import { UrlSegment } from '@angular/router';
 
 describe('ActivatedRouteStub', () => {

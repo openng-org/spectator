@@ -1,6 +1,6 @@
 import { createDirectiveFactory, SpectatorDirective } from '@openng/spectator';
 import { Directive, Inject, InjectionToken } from '@angular/core';
-import { overrideDirectives } from '../src/lib/spectator/create-factory';
+import { overrideDirectives } from '../core/src/lib/spectator/create-factory';
 
 // Created only for testing purpose
 export const directiveProviderToken = new InjectionToken('DirectiveProviderToken');

@@ -26,6 +26,12 @@
       "@openng/spectator/vitest": [
         "./projects/spectator/vitest/src/public_api.ts"
       ],
+      "@openng/spectator/core": [
+        "projects/spectator/core/src/public_api.ts"
+      ],
+      "@openng/spectator/jasmine": [
+        "projects/spectator/jasmine/src/public_api.ts"
+      ],
       "@openng/spectator/internals": [
         "./projects/spectator/internals/src/public_api.ts"
       ],

@@ -7,7 +7,7 @@ import {
   SpectatorPipeOptions,
   SpectatorPipeOverrides,
   Token,
-} from '@openng/spectator';
+} from '@openng/spectator/core';
 
 import { mockProvider, SpyObject } from './mock';
 

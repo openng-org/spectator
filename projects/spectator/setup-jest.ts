@@ -1,4 +1,4 @@
-import { defineGlobalsInjections } from './src/lib/globals-injections';
+import { defineGlobalsInjections } from './core/src/lib/globals-injections';
 import { TranslatePipe } from './test/translate.pipe';
 import { TranslateService } from './test/translate.service';
 

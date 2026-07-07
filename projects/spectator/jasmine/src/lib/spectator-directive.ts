@@ -26,7 +26,7 @@ export class SpectatorDirective<D, H = HostComponent> extends BaseSpectatorDirec
 export type SpectatorDirectiveFactory<D, H = HostComponent> = <HP>(
   template: string,
   overrides?: SpectatorDirectiveOverrides<H, HP>,
-) => SpectatorDirective<D, H & HostComponent extends H ? HP : unknown>;
+) => SpectatorDirective<D, H & (HostComponent extends H ? HP : unknown)>;
 
 /**
  * @publicApi
@@ -34,7 +34,7 @@ export type SpectatorDirectiveFactory<D, H = HostComponent> = <HP>(
 export type PresetSpectatorDirectiveFactory<D, H> = <HP>(
   template?: string,
   overrides?: SpectatorDirectiveOverrides<H, HP>,
-) => SpectatorDirective<D, H & HostComponent extends H ? HP : unknown>;
+) => SpectatorDirective<D, H & (HostComponent extends H ? HP : unknown)>;
 
 /**
  * @publicApi

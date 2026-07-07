@@ -1,7 +1,7 @@
 import { createComponentFactory, createHostFactory, Spectator, SpectatorHost } from '@openng/spectator';
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { QueryService } from './query.service';
-import { overrideComponents } from '../src/lib/spectator/create-factory';
+import { overrideComponents } from '../core/src/lib/spectator/create-factory';
 
 // Created only for testing purpose
 @Component({
