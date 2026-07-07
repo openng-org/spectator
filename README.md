@@ -1,19 +1,24 @@
 <p align="center">
- <img width="100%" height="100%" src="https://raw.githubusercontent.com/openng/spectator/master/image.svg?sanitize=true">
+ <img width="100%" height="100%" src="https://raw.githubusercontent.com/openng-org/spectator/main/image.svg?sanitize=true">
 </p>
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-48-orange.svg?style=flat-square)](#contributors)
 [![spectator](https://img.shields.io/badge/tested%20with-spectator-2196F3.svg?style=flat-square)]()
 [![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg?style=flat-square)]()
 [![commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)]()
 [![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)]()
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/ngneat/spectator/ci.yml?branch=master&style=flat-square
-)](https://github.com/ngneat/spectator/actions/workflows/ci.yml?query=branch%3Amaster)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/openng-org/spectator/ci.yml?branch=main&style=flat-square
+)](https://github.com/openng-org/spectator/actions/workflows/ci.yml?query=branch%3Amain)
 
 > A Powerful Tool to Simplify Your Angular Tests
 
 Spectator helps you get rid of all the boilerplate grunt work, leaving you with readable, sleek and streamlined unit tests.
+
+## Why this fork?
+
+Spectator was originally created and maintained under the [ngneat](https://github.com/ngneat) organization. At some point ngneat removed all of its repositories from GitHub without any announcement or notice, leaving Spectator without a maintained home and its users without updates.
+
+This fork, published as [`@openng/spectator`](https://www.npmjs.com/package/@openng/spectator), exists to keep Spectator alive: actively maintained, kept up to date with the latest Angular versions, and available to the community that still relies on it.
 
 ## Features
 - ✅ Support for testing Angular components, directives and services
@@ -30,36 +35,10 @@ Spectator helps you get rid of all the boilerplate grunt work, leaving you with 
 - ✅ Jest Support
 - ✅ Vitest Support
 
-
-## Sponsoring ngneat
-
-[Sponsorships](https://github.com/sponsors/ngneat) aid in the continued development and maintenance of ngneat libraries. Consider asking your company to sponsor ngneat as its core to their business and application development.
-
-### Gold Sponsors
-
-Elevate your support by becoming a Gold Sponsor and have your logo prominently featured on our README in the top 5 repositories.
-
-### Silver Sponsors
-
-Boost your backing by becoming a Gold Sponsor and enjoy the spotlight with your logo prominently showcased in the top 3 repositories on our README.
-
-### Bronze Sponsors
-
-<a href="https://houseofangular.io" target="_blank">
-  <img src="https://github.com/ngrx/platform/blob/main/projects/ngrx.io/src/assets/images/sponsors/house-of-angular.png" width="50px" height="50px" alt="House of Angular" />
-</a>
-
-Become a bronze sponsor and get your logo on our README on GitHub.
-
-
-
 ## Table of Contents
 
+- [Why this fork?](#why-this-fork)
 - [Features](#features)
-- [Sponsoring ngneat](#sponsoring-ngneat)
-  - [Gold Sponsors](#gold-sponsors)
-  - [Silver Sponsors](#silver-sponsors)
-  - [Bronze Sponsors](#bronze-sponsors)
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
   - [NPM](#npm)
@@ -111,18 +90,18 @@ Become a bronze sponsor and get your logo on our README on GitHub.
 
 ### NPM
 
-`npm install @ngneat/spectator --save-dev`
+`npm install @openng/spectator --save-dev`
 
 ### Yarn
 
-`yarn add @ngneat/spectator --dev`
+`yarn add @openng/spectator --dev`
 
 ## Testing Components
 Create a component factory by using the `createComponentFactory()` function, passing the component class that you want to test.
 The `createComponentFactory()` returns a function that will create a fresh component in each `it` block:
 
 ```ts
-import { Spectator, createComponentFactory } from '@ngneat/spectator';
+import { Spectator, createComponentFactory } from '@openng/spectator';
 import { ButtonComponent } from './button.component';
 
 describe('ButtonComponent', () => {
@@ -428,7 +407,7 @@ spectator.click(byText('Element'));
 spectator.blur(SpectatorElement);
 spectator.blur(byText('Element'));
 ```
-Note that if using the jest framework, blur() only works if the element is focused. [Details](https://github.com/ngneat/spectator/issues/373#issuecomment-896285805).
+Note that if using the jest framework, blur() only works if the element is focused.
 - `focus()` - Triggers a focus event:
 ```ts
 spectator.focus(SpectatorElement);
@@ -461,7 +440,7 @@ spectator.dispatchTouchEvent(byText('Element'), type, x, y);
 
 #### Custom Events
 
-You can trigger custom events (@Output() of child components) [using](https://github.com/ngneat/spectator/blob/master/projects/spectator/test/child-custom-event/child-custom-event-parent.component.spec.ts) the following method:
+You can trigger custom events (@Output() of child components) [using](https://github.com/openng-org/spectator/blob/main/projects/spectator/test/child-custom-event/child-custom-event-parent.component.spec.ts) the following method:
 ```ts
 spectator.triggerEventHandler(MyChildComponent, 'myCustomEvent', 'eventValue');
 spectator.triggerEventHandler(MyChildComponent, 'myCustomEvent', 'eventValue', { root: true});
@@ -629,7 +608,7 @@ If you need to mock components, you can use the [ng-mocks](https://github.com/ik
 Example:
 
 ```ts
-import { createHostFactory } from '@ngneat/spectator';
+import { createHostFactory } from '@openng/spectator';
 import { MockComponent } from 'ng-mocks';
 import { FooComponent } from './path/to/foo.component';
 
@@ -786,7 +765,7 @@ Testing a component with a host component is a more elegant and powerful techniq
 It basically gives you the ability to write your tests in the same way that you write your code. Let's see it in action:
 
 ```ts
-import { createHostFactory, SpectatorHost } from '@ngneat/spectator';
+import { createHostFactory, SpectatorHost } from '@openng/spectator';
 
 describe('ZippyComponent', () => {
   let spectator: SpectatorHost<ZippyComponent>;
@@ -1030,7 +1009,7 @@ Inputs should be set through `hostProps` or `setHostInput` instead, and passed t
 The following example shows how to test a service with Spectator:
 
 ```ts
-import { createServiceFactory, SpectatorService } from '@ngneat/spectator';
+import { createServiceFactory, SpectatorService } from '@openng/spectator';
 
 import { AuthService } from 'auth.service.ts';
 
@@ -1073,7 +1052,7 @@ export class AuthService {
 ```
 In this case we can mock the `DateService` dependency.
 ```ts
-import { createServiceFactory, SpectatorService } from '@ngneat/spectator';
+import { createServiceFactory, SpectatorService } from '@openng/spectator';
 
 import { AuthService } from 'auth.service.ts';
 
@@ -1102,7 +1081,7 @@ describe('AuthService', () => {
 The following example shows how to test a pipe with Spectator:
 
 ```ts
-import { SpectatorPipe, createPipeFactory } from '@ngneat/spectator';
+import { SpectatorPipe, createPipeFactory } from '@openng/spectator';
 
 import { StatsService } from './stats.service';
 import { SumPipe } from './sum.pipe';
@@ -1158,7 +1137,7 @@ The following example illustrates how to test a pipe using a custom host compone
 
 ```ts
 import { Component, Input } from '@angular/core';
-import { SpectatorPipe, createPipeFactory } from '@ngneat/spectator';
+import { SpectatorPipe, createPipeFactory } from '@openng/spectator';
 
 import { AveragePipe } from './average.pipe';
 import { StatsService } from './stats.service';
@@ -1219,7 +1198,7 @@ Let's see how we can test DI Function easily with Spectator:
 
 ```ts
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
-import { createInjectionContextFactory, SpectatorInjectionContext } from '@ngneat/spectator';
+import { createInjectionContextFactory, SpectatorInjectionContext } from '@openng/spectator';
 
 function getUsers() {
   return inject(HttpClient).get<User[]>('users');
@@ -1263,7 +1242,7 @@ dateService.isExpired.and.callFake(() => fake);
 dateService.isExpired.and.throwError('Error');
 dateService.isExpired.andCallFake(() => fake);
 ```
-However, if you use Jest as test framework and you want to utilize its mocking mechanism instead, import the `mockProvider()` from `@ngneat/spectator/jest`.
+However, if you use Jest as test framework and you want to utilize its mocking mechanism instead, import the `mockProvider()` from `@openng/spectator/jest`.
 This will automatically use the `jest.fn()` function to create a Jest compatible mock instead.
 
 `mockProvider()` doesn't include properties. In case you need to have properties on your mock you can use 2nd argument:
@@ -1328,11 +1307,11 @@ it('should call the weather api in the constructor', () => {
 ## Jest Support
 By default, Spectator uses Jasmine for creating spies. If you are using Jest as test framework instead, you can let Spectator create Jest-compatible spies.
 
-Just import one of the following functions from `@ngneat/spectator/jest`(instead of @ngneat/spectator), and it will use Jest instead of Jasmine.
+Just import one of the following functions from `@openng/spectator/jest`(instead of @openng/spectator), and it will use Jest instead of Jasmine.
 `createComponentFactory()`, `createHostFactory()`, `createServiceFactory()`, `createHttpFactory()`, `mockProvider()`.
 
 ```ts
-import { createServiceFactory, SpectatorService } from '@ngneat/spectator/jest';
+import { createServiceFactory, SpectatorService } from '@openng/spectator/jest';
 import { AuthService } from './auth.service';
 import { DateService } from './date.service';
 
@@ -1362,7 +1341,7 @@ describe('AuthService', () => {
 When using the component schematic you can specify the `--unitTestRunner` flag to `jest` to have the Jest imports used. In order to Jest imports the default, update `angular.json`:
 ```json
 "schematics": {
-  "@ngneat/spectator:spectator-component": {
+  "@openng/spectator:spectator-component": {
     "unitTestRunner": "jest"
   }
 }
@@ -1380,21 +1359,21 @@ export default defineConfig(({ mode }) => ({
   /* ... */
   test: {
     /* ... */
-    // inline @ngneat/spectator
+    // inline @openng/spectator
     server: {
       deps: {
-        inline: ['@ngneat/spectator']
+        inline: ['@openng/spectator']
       }
     }
   },
 }));
 ```
 
-You can then import the functions from `@ngneat/spectator/vitest` instead of `@ngneat/spectator`
+You can then import the functions from `@openng/spectator/vitest` instead of `@openng/spectator`
 and it will use Vitest instead of Jasmine.
 
 ```ts
-import { createServiceFactory, SpectatorService } from '@ngneat/spectator/vitest';
+import { createServiceFactory, SpectatorService } from '@openng/spectator/vitest';
 import { AuthService } from './auth.service';
 import { DateService } from './date.service';
 
@@ -1424,7 +1403,7 @@ describe('AuthService', () => {
 When using the component schematic you can specify the `--unitTestRunner` flag to `vitest` to have the Vitest imports used. In order to Vitest imports the default, update `angular.json`:
 ```json
 "schematics": {
-  "@ngneat/spectator:spectator-component": {
+  "@openng/spectator:spectator-component": {
     "unitTestRunner": "vitest"
   }
 }
@@ -1457,7 +1436,7 @@ export class TodosDataService {
 
 The test for the above service should look like:
 ```ts
-import { createHttpFactory, HttpMethod } from '@ngneat/spectator';
+import { createHttpFactory, HttpMethod } from '@openng/spectator';
 import { TodosDataService } from './todos-data.service';
 
 describe('HttpClient testing', () => {
@@ -1503,7 +1482,7 @@ We need to create an HTTP factory by using the `createHttpFactory()` function, p
 It's possible to define injections which will be available for each test without the need to re-declare them in each test:
 ```ts
 // test.ts
-import { defineGlobalsInjections } from '@ngneat/spectator';
+import { defineGlobalsInjections } from '@openng/spectator';
 import { TranslocoModule } from '@jsverse/transloco';
 
 defineGlobalsInjections({
@@ -1649,14 +1628,14 @@ To use `spectator` as the default collection in your Angular CLI project,
 add it to your `angular.json`:
 
 ```sh
-ng config cli.defaultCollection @ngneat/spectator
+ng config cli.defaultCollection @openng/spectator
 ```
 
-The `spectator` schematics extend the default `@schematics/angular` collection. If you want to set defaults for schematics such as generating components with scss file, you must change the schematics package name from `@schematics/angular` to `@ngneat/spectator` in `angular.json`:
+The `spectator` schematics extend the default `@schematics/angular` collection. If you want to set defaults for schematics such as generating components with scss file, you must change the schematics package name from `@schematics/angular` to `@openng/spectator` in `angular.json`:
 
 ```json
 "schematics": {
-  "@ngneat/spectator:spectator-component": {
+  "@openng/spectator:spectator-component": {
     "style": "scss"
   }
 }
@@ -1673,88 +1652,11 @@ The Spectator & Jest version can be accessed [here](https://github.com/muratkere
 
 <table>
   <tr>
-    <td align="center"><a href="https://www.netbasal.com"><img src="https://avatars1.githubusercontent.com/u/6745730?v=4" width="100px;" alt="Netanel Basal"/><br /><sub><b>Netanel Basal</b></sub></a></td>
-    <td align="center"><a href="https://github.com/dirkluijk"><img src="https://avatars2.githubusercontent.com/u/2102973?v=4" width="100px;" alt="Dirk Luijk"/><br /><sub><b>Dirk Luijk</b></sub></a></td>
-    <td align="center"><a href="http://benjaminelliott.co.uk"><img src="https://avatars1.githubusercontent.com/u/4996462?v=4" width="100px;" alt="Ben Elliott"/><br /><sub><b>Ben Elliott</b></sub></a></td>
+    <td align="center"><a href="https://github.com/dominicbachmann"><img src="https://avatars.githubusercontent.com/u/64000291?v=4" width="100px;" alt="Netanel Basal"/><br /><sub><b>Dominic Bachmann</b></sub></a></td>
+    <td align="center"><a href="https://github.com/geromegrignon"><img src="https://avatars.githubusercontent.com/u/32737308?v=4" width="100px;" alt="Dirk Luijk"/><br /><sub><b>Gerome Grignon</b></sub></a></td>
     </tr>
 </table>
 
 ## Contributors
 
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):~~~~
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/theblushingcrow"><img src="https://avatars3.githubusercontent.com/u/638818?v=4?s=100" width="100px;" alt=""/><br /><sub><b>I. Sinai</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=theblushingcrow" title="Documentation">📖</a> <a href="https://github.com/ngneat/spectator/pulls?q=is%3Apr+reviewed-by%3Atheblushingcrow" title="Reviewed Pull Requests">👀</a> <a href="#design-theblushingcrow" title="Design">🎨</a></td>
-    <td align="center"><a href="https://github.com/valburyakov"><img src="https://avatars3.githubusercontent.com/u/18645670?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Valentin Buryakov</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=valburyakov" title="Code">💻</a> <a href="#ideas-valburyakov" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><a href="https://github.com/bengry"><img src="https://avatars1.githubusercontent.com/u/260431?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ben Grynhaus</b></sub></a><br /><a href="https://github.com/ngneat/spectator/issues?q=author%3Abengry" title="Bug reports">🐛</a> <a href="https://github.com/ngneat/spectator/commits?author=bengry" title="Code">💻</a></td>
-    <td align="center"><a href="http://www.nuc.cz"><img src="https://avatars2.githubusercontent.com/u/681176?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Martin Nuc</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=MartinNuc" title="Code">💻</a></td>
-    <td align="center"><a href="https://medium.com/@LayZeeDK"><img src="https://avatars1.githubusercontent.com/u/6364586?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Lars Gyrup Brink Nielsen</b></sub></a><br /><a href="#platform-LayZeeDK" title="Packaging/porting to new platform">📦</a> <a href="https://github.com/ngneat/spectator/commits?author=LayZeeDK" title="Tests">⚠️</a></td>
-    <td align="center"><a href="https://github.com/thekiba"><img src="https://avatars0.githubusercontent.com/u/1910515?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Andrew Grekov</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=thekiba" title="Code">💻</a> <a href="#tool-thekiba" title="Tools">🔧</a></td>
-    <td align="center"><a href="http://twitter.com/jpzwarte"><img src="https://avatars1.githubusercontent.com/u/3968?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jeroen Zwartepoorte</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=jpzwarte" title="Code">💻</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/oschlegel"><img src="https://avatars1.githubusercontent.com/u/11634412?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Oliver Schlegel</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=oschlegel" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/rexebin"><img src="https://avatars1.githubusercontent.com/u/10893959?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Rex Ye</b></sub></a><br /><a href="#tool-rexebin" title="Tools">🔧</a> <a href="https://github.com/ngneat/spectator/commits?author=rexebin" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/tchmura"><img src="https://avatars0.githubusercontent.com/u/36368505?v=4?s=100" width="100px;" alt=""/><br /><sub><b>tchmura</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=tchmura" title="Code">💻</a></td>
-    <td align="center"><a href="http://www.theneuralnetwork.nl"><img src="https://avatars2.githubusercontent.com/u/4572798?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yoeri Nijs</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=YoeriNijs" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/askarby"><img src="https://avatars1.githubusercontent.com/u/44014?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anders Skarby</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=askarby" title="Code">💻</a></td>
-    <td align="center"><a href="https://medium.com/@gregor.woiwode"><img src="https://avatars3.githubusercontent.com/u/444278?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Gregor Woiwode</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=GregOnNet" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/asheremetev"><img src="https://avatars2.githubusercontent.com/u/10629571?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alexander Sheremetev</b></sub></a><br /><a href="https://github.com/ngneat/spectator/issues?q=author%3Aasheremetev" title="Bug reports">🐛</a> <a href="https://github.com/ngneat/spectator/commits?author=asheremetev" title="Code">💻</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/Hypopheralcus"><img src="https://avatars1.githubusercontent.com/u/550162?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mike</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=Hypopheralcus" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/mehmet-erim"><img src="https://avatars0.githubusercontent.com/u/34455572?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mehmet Erim</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=mehmet-erim" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/Plysepter"><img src="https://avatars0.githubusercontent.com/u/8854614?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Brett Eckert</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=Plysepter" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/kanafghan"><img src="https://avatars3.githubusercontent.com/u/4976816?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ismail Faizi</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=kanafghan" title="Code">💻</a></td>
-    <td align="center"><a href="https://twitter.com/maxime1992"><img src="https://avatars0.githubusercontent.com/u/4950209?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Maxime</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=maxime1992" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://e-weap.fr"><img src="https://avatars1.githubusercontent.com/u/1033191?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jonathan Bonnefoy</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=eweap" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/Coly010"><img src="https://avatars2.githubusercontent.com/u/12140467?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Colum Ferry</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=Coly010" title="Code">💻</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/cjcoops"><img src="https://avatars1.githubusercontent.com/u/20629635?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Chris Cooper</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=cjcoops" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/MarcScheib"><img src="https://avatars1.githubusercontent.com/u/5886709?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Marc Scheib</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=MarcScheib" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/dgsmith2"><img src="https://avatars1.githubusercontent.com/u/2036391?v=4?s=100" width="100px;" alt=""/><br /><sub><b>dgsmith2</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=dgsmith2" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/dedwardstech"><img src="https://avatars1.githubusercontent.com/u/50801476?v=4?s=100" width="100px;" alt=""/><br /><sub><b>dedwardstech</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=dedwardstech" title="Code">💻</a> <a href="#ideas-dedwardstech" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><a href="https://github.com/tamasfoldi"><img src="https://avatars2.githubusercontent.com/u/11571461?v=4?s=100" width="100px;" alt=""/><br /><sub><b>tamasfoldi</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=tamasfoldi" title="Code">💻</a> <a href="#ideas-tamasfoldi" title="Ideas, Planning, & Feedback">🤔</a></td>
-    <td align="center"><a href="https://github.com/IlCallo"><img src="https://avatars0.githubusercontent.com/u/10036108?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Paolo Caleffi</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=IlCallo" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/tonivj5"><img src="https://avatars2.githubusercontent.com/u/7110786?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Toni Villena</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=tonivj5" title="Code">💻</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/itayod"><img src="https://avatars2.githubusercontent.com/u/6719615?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Itay Oded</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=itayod" title="Code">💻</a></td>
-    <td align="center"><a href="https://twitter.com/Wykks"><img src="https://avatars0.githubusercontent.com/u/1236069?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Guillaume de Jabrun</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=Wykks" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/codeNoobie"><img src="https://avatars2.githubusercontent.com/u/5392144?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anand Tiwary</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=codeNoobie" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/AlesDo"><img src="https://avatars3.githubusercontent.com/u/13190278?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ales Doganoc</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=AlesDo" title="Code">💻</a></td>
-    <td align="center"><a href="https://zoltan.nz"><img src="https://avatars3.githubusercontent.com/u/1009783?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Zoltan</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=zoltan-nz" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/Coffee-Tea"><img src="https://avatars1.githubusercontent.com/u/13370430?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vitalii Baziuk</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=Coffee-Tea" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/clementlemarc-certua"><img src="https://avatars0.githubusercontent.com/u/50454150?v=4?s=100" width="100px;" alt=""/><br /><sub><b>clementlemarc-certua</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=clementlemarc-certua" title="Code">💻</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/th0r"><img src="https://avatars1.githubusercontent.com/u/302213?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yuriy Grunin</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=th0r" title="Code">💻</a></td>
-    <td align="center"><a href="https://t.me/L2jLiga"><img src="https://avatars2.githubusercontent.com/u/11780854?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Andrey Chalkin</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=L2jLiga" title="Code">💻</a></td>
-    <td align="center"><a href="https://stevenharrisdev.com"><img src="https://avatars3.githubusercontent.com/u/7720242?s=400&v=4?s=100" width="100px;" alt=""/><br /><sub><b>Steven Harris</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=Steven-Harris" title="Code">💻</a> <a href="https://github.com/ngneat/spectator/commits?author=Steven-Harris" title="Documentation">📖</a></td>
-    <td align="center"><a href="http://rjgunning.com"><img src="https://avatars2.githubusercontent.com/u/4697912?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Richard Sahrakorpi</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=RGunning" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/kremerd"><img src="https://avatars2.githubusercontent.com/u/13023533?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dominik Kremer</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=kremerd" title="Code">💻</a></td>
-    <td align="center"><a href="https://medium.com/@ozanturhan"><img src="https://avatars1.githubusercontent.com/u/5039606?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mehmet Ozan Turhan</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=ozanturhan" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/thunderer199"><img src="https://avatars2.githubusercontent.com/u/13765663?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Vlad Lashko</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=thunderer199" title="Code">💻</a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://github.com/williamjuan027"><img src="https://avatars0.githubusercontent.com/u/20136906?v=4?s=100" width="100px;" alt=""/><br /><sub><b>William Tjondrosuharto</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=williamjuan027" title="Code">💻</a></td>
-    <td align="center"><a href="https://twitter.com/Cgatian"><img src="https://avatars0.githubusercontent.com/u/1752170?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Chaz Gatian</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=cgatian" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/shirados90"><img src="https://avatars2.githubusercontent.com/u/27703381?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Pavel Korobov</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=shirados90" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/EnnoLohmann"><img src="https://avatars3.githubusercontent.com/u/25953659?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Enno Lohmann</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=EnnoLohmann" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/bogusweb"><img src="https://avatars2.githubusercontent.com/u/5169399?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Pawel Boguslawski</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=bogusweb" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/twittwer"><img src="https://avatars1.githubusercontent.com/u/8677948?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Tobias Wittwer</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=twittwer" title="Code">💻</a> <a href="https://github.com/ngneat/spectator/commits?author=twittwer" title="Documentation">📖</a></td>
-    <td align="center"><a href="http://matheo.co/"><img src="https://avatars.githubusercontent.com/u/260185?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Mateo Tibaquirá</b></sub></a><br /><a href="https://github.com/ngneat/spectator/commits?author=matheo" title="Code">💻</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://allcontributors.org/docs/en/emoji-key) specification. Contributions of any kind welcome!
+Thanks goes to [these wonderful people](https://github.com/openng-org/spectator/graphs/contributors?all=1)
