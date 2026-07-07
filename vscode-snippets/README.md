@@ -1,4 +1,4 @@
-## Code snippets for @ngneat/spectator
+## Code snippets for @openng/spectator
 
 #### Available snippets:
 

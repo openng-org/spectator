@@ -2,7 +2,7 @@
   "createComponentFactory": {
     "prefix": "spec-comp",
     "body": [
-      "import { Spectator, createComponentFactory } from '@ngneat/spectator';",
+      "import { Spectator, createComponentFactory } from '@openng/spectator';",
       "import { ${1:name}Component } from './${2:path}.component';",
       "",
       "describe('${1:name}Component', () => {",
@@ -21,7 +21,7 @@
   "createHostFactory": {
     "prefix": "spec-host",
     "body": [
-      "import { createHostFactory, SpectatorHost } from '@ngneat/spectator';",
+      "import { createHostFactory, SpectatorHost } from '@openng/spectator';",
       "import { ${1:name}Component } from './${2:path}.component';",
       "",
       "describe('${1:name}Component', () => {",
@@ -40,7 +40,7 @@
   "createDirectiveFactory": {
     "prefix": "spec-directive",
     "body": [
-      "import { SpectatorDirective, createDirectiveFactory } from '@ngneat/spectator';",
+      "import { SpectatorDirective, createDirectiveFactory } from '@openng/spectator';",
       "import { ${1:name}Directive } from './${2:path}.directive';",
       "",
       "describe('${1:name}Directive', () => {",
@@ -62,7 +62,7 @@
   "createServiceFactory": {
     "prefix": "spec-service",
     "body": [
-      "import { createServiceFactory, SpectatorService } from '@ngneat/spectator';",
+      "import { createServiceFactory, SpectatorService } from '@openng/spectator';",
       "import { ${1:name}Service } from './${2:path}.service';",
       "",
       "describe('${1:name}Service', () => {",
@@ -85,7 +85,7 @@
   "createPipeFactory": {
     "prefix": "spec-pipe",
     "body": [
-      "import { createPipeFactory, SpectatorPipe } from '@ngneat/spectator';",
+      "import { createPipeFactory, SpectatorPipe } from '@openng/spectator';",
       "import { ${1:name}Pipe } from './${2:path}.pipe';",
       "",
       "describe('${1:name}Pipe', () => {",
@@ -106,7 +106,7 @@
   "createHttpFactory": {
     "prefix": "spec-http",
     "body": [
-      "import { createHttpFactory, HttpMethod, SpectatorHttp } from '@ngneat/spectator';",
+      "import { createHttpFactory, HttpMethod, SpectatorHttp } from '@openng/spectator';",
       "import { ${1:name}Service } from './${2:path}.service';",
       "",
       "describe('${1:name}Service', () => {",
@@ -126,7 +126,7 @@
   "createRoutingFactory": {
     "prefix": "spec-routing",
     "body": [
-      "import { createRoutingFactory, SpectatorRouting } from '@ngneat/spectator';",
+      "import { createRoutingFactory, SpectatorRouting } from '@openng/spectator';",
       "import { ${1:name}Component } from './${2:path}.component';",
       "",
       "describe('${1:name}Component', () => {",
@@ -151,7 +151,7 @@
   "createJestComponentFactory": {
     "prefix": "spec-jest-comp",
     "body": [
-      "import { Spectator, createComponentFactory } from '@ngneat/spectator/jest';",
+      "import { Spectator, createComponentFactory } from '@openng/spectator/jest';",
       "import { ${1:name}Component } from './${2:path}.component';",
       "",
       "describe('${1:name}Component', () => {",
@@ -170,7 +170,7 @@
   "createJestHostFactory": {
     "prefix": "spec-jest-host",
     "body": [
-      "import { createHostFactory, SpectatorHost } from '@ngneat/spectator/jest';",
+      "import { createHostFactory, SpectatorHost } from '@openng/spectator/jest';",
       "import { ${1:name}Component } from './${2:path}.component';",
       "",
       "describe('${1:name}Component', () => {",
@@ -189,7 +189,7 @@
   "createJestDirectiveFactory": {
     "prefix": "spec-jest-directive",
     "body": [
-      "import { SpectatorDirective, createDirectiveFactory } from '@ngneat/spectator/jest';",
+      "import { SpectatorDirective, createDirectiveFactory } from '@openng/spectator/jest';",
       "import { ${1:name}Directive } from './${2:path}.directive';",
       "",
       "describe('${1:name}Directive', () => {",
@@ -211,7 +211,7 @@
   "createJestServiceFactory": {
     "prefix": "spec-jest-service",
     "body": [
-      "import { createServiceFactory, SpectatorService } from '@ngneat/spectator/jest';",
+      "import { createServiceFactory, SpectatorService } from '@openng/spectator/jest';",
       "import { ${1:name}Service } from './${2:path}.service';",
       "",
       "describe('${1:name}Service', () => {",
@@ -234,7 +234,7 @@
   "createJestPipeFactory": {
     "prefix": "spec-jest-pipe",
     "body": [
-      "import { createPipeFactory, SpectatorPipe } from '@ngneat/spectator/jest';",
+      "import { createPipeFactory, SpectatorPipe } from '@openng/spectator/jest';",
       "import { ${1:name}Pipe } from './${2:path}.pipe';",
       "",
       "describe('${1:name}Pipe', () => {",
@@ -255,7 +255,7 @@
   "createJestHttpFactory": {
     "prefix": "spec-jest-http",
     "body": [
-      "import { createHttpFactory, HttpMethod, SpectatorHttp } from '@ngneat/spectator/jest';",
+      "import { createHttpFactory, HttpMethod, SpectatorHttp } from '@openng/spectator/jest';",
       "import { ${1:name}Service } from './${2:path}.service';",
       "",
       "describe('${1:name}Service', () => {",
@@ -275,7 +275,7 @@
   "createJestRoutingFactory": {
     "prefix": "spec-jest-routing",
     "body": [
-      "import { createRoutingFactory, SpectatorRouting } from '@ngneat/spectator/jest';",
+      "import { createRoutingFactory, SpectatorRouting } from '@openng/spectator/jest';",
       "import { ${1:name}Component } from './${2:path}.component';",
       "",
       "describe('${1:name}Component', () => {",
