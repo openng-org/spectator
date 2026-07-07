@@ -1,5 +1,3 @@
-/// <reference types="jest" />
-
 import { FactoryProvider, AbstractType, Type } from '@angular/core';
 import { installProtoMethods, CompatibleSpy, SpyObject as BaseSpyObject } from '@openng/spectator/core';
 import { jest } from '@jest/globals';

@@ -1,6 +1,10 @@
 {
   "extends": "../tsconfig.spec.json",
   "compilerOptions": {
+    "types": [
+      "jest",
+      "node"
+    ],
     "isolatedModules": true,
     "emitDecoratorMetadata": false
   },
