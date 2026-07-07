@@ -43,6 +43,7 @@ This fork, published as [`@openng/spectator`](https://www.npmjs.com/package/@ope
 - [Installation](#installation)
   - [NPM](#npm)
   - [Yarn](#yarn)
+- [Compatibility Matrix](#compatibility-matrix)
 - [Testing Components](#testing-components)
   - [Events API](#events-api)
     - [Custom Events](#custom-events)
@@ -95,6 +96,22 @@ This fork, published as [`@openng/spectator`](https://www.npmjs.com/package/@ope
 ### Yarn
 
 `yarn add @openng/spectator --dev`
+
+## Compatibility Matrix
+
+| Package             | Version | Angular         |
+| :------------------ | :------ | :-------------- |
+| `@openng/spectator` | 1.0.0   | 22.x.x          |
+| `@ngneat/spectator` | 22.0.0  | 20.x.x - 22.x.x |
+| `@ngneat/spectator` | 20.0.0  | 18.x.x - 19.x.x |
+| `@ngneat/spectator` | 18.0.0  | 17.x.x          |
+| `@ngneat/spectator` | 15.0.1  | 16.x.x          |
+| `@ngneat/spectator` | 14.0.0  | 15.x.x          |
+| `@ngneat/spectator` | 12.0.0  | 14.x.x          |
+| `@ngneat/spectator` | 10.0.0  | 13.x.x          |
+| `@ngneat/spectator` | 8.0.0   | 12.x.x          |
+| `@ngneat/spectator` | 7.2.0   | 10.x.x - 11.x.x |
+| `@ngneat/spectator` | 7.0.0   | 8.x.x - 9.x.x   |
 
 ## Testing Components
 Create a component factory by using the `createComponentFactory()` function, passing the component class that you want to test.
