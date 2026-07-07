@@ -43,6 +43,7 @@ export { initialInjectionContextModule } from './lib/spectator-injection-context
 
 export * from './lib/dom-selectors';
 export * from './lib/matchers';
+export { SpectatorMatchers } from './lib/matchers-types';
 export * from './lib/mock';
 export * from './lib/token';
 export * from './lib/types';

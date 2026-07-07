@@ -4,6 +4,26 @@
     "types": [
       "jasmine",
       "node"
-    ]
+    ],
+    "paths": {
+      "@openng/spectator": [
+        "./src/public_api.ts"
+      ],
+      "@openng/spectator/jest": [
+        "./jest/src/public_api.ts"
+      ],
+      "@openng/spectator/vitest": [
+        "./vitest/src/public_api.ts"
+      ],
+      "@openng/spectator/core": [
+        "./core/src/public_api.ts"
+      ],
+      "@openng/spectator/jasmine": [
+        "./jasmine/src/public_api.ts"
+      ],
+      "@openng/spectator/internals": [
+        "./internals/src/public_api.ts"
+      ]
+    }
   }
 }

@@ -11,6 +11,6 @@
   ],
   "include": [
     "test/**/*.spec.ts",
-    "../jasmine/src/lib/matchers-types.ts"
+    "test/matchers-types.d.ts"
   ]
 }
