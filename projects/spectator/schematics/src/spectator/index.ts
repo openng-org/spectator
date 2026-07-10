@@ -1,21 +1,20 @@
 import { normalize, strings } from '@angular-devkit/core';
 import {
   apply,
+  applyTemplates,
   chain,
   externalSchematic,
+  MergeStrategy,
   mergeWith,
   move,
-  template,
-  url,
-  MergeStrategy,
+  noop,
   Rule,
   SchematicContext,
   Tree,
-  noop,
+  url,
 } from '@angular-devkit/schematics';
-import { buildDefaultPath, getWorkspace } from '@schematics/angular/utility/workspace';
 import { parseName } from '@schematics/angular/utility/parse-name';
-
+import { buildDefaultPath, getWorkspace } from '@schematics/angular/utility/workspace';
 import { ComponentOptions, DirectiveOptions, PipeOptions, ServiceOptions, UnitTestRunner } from './schema';
 
 export function spectatorComponentSchematic(options: ComponentOptions): Rule {
@@ -35,9 +34,10 @@ export function spectatorComponentSchematic(options: ComponentOptions): Rule {
       const specTemplateRule = apply(
         url(`./files/${options.withHost ? 'component-host' : options.withCustomHost ? 'component-custom-host' : 'component'}`),
         [
-          template({
+          applyTemplates({
             ...strings,
             ...options,
+            type: 'component',
             secondaryEntryPoint: getSecondaryEntryPoint(options),
           }),
           move(movePath),
@@ -63,9 +63,10 @@ export function spectatorServiceSchematic(options: ServiceOptions): Rule {
       await _ensurePath(tree, options);
       const movePath = normalize(options.path || '');
       const specTemplateRule = apply(url(`./files/${options.isDataService ? 'data-service' : `service`}`), [
-        template({
+        applyTemplates({
           ...strings,
           ...options,
+          type: 'service',
           secondaryEntryPoint: getSecondaryEntryPoint(options),
         }),
         move(movePath),
@@ -90,9 +91,10 @@ export function spectatorDirectiveSchematic(options: DirectiveOptions): Rule {
       await _ensurePath(tree, options);
       const movePath = normalize(options.path || '');
       const specTemplateRule = apply(url(`./files/directive`), [
-        template({
+        applyTemplates({
           ...strings,
           ...options,
+          type: 'directive',
           secondaryEntryPoint: getSecondaryEntryPoint(options),
         }),
         move(movePath),
@@ -117,9 +119,10 @@ export function spectatorPipeSchematic(options: PipeOptions): Rule {
       await _ensurePath(tree, options);
       const movePath = normalize(options.path || '');
       const specTemplateRule = apply(url(`./files/pipe`), [
-        template({
+        applyTemplates({
           ...strings,
           ...options,
+          type: 'pipe',
           secondaryEntryPoint: getSecondaryEntryPoint(options),
         }),
         move(movePath),
