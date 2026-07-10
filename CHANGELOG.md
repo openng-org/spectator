@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/openng-org/spectator/compare/v1.0.0...v1.0.1) (2026-07-10)
+
+
+### Bug Fixes
+
+* ship custom matcher type declarations in bundled d.ts ([4ff7208](https://github.com/openng-org/spectator/commit/4ff72084067f821aa4b69f7478f701263807e8e4)), closes [#8](https://github.com/openng-org/spectator/issues/8)
+
 ## 1.0.0 (2026-07-08)
 
 Initial release of [`@openng/spectator`](https://www.npmjs.com/package/@openng/spectator), a community-maintained fork of [`@ngneat/spectator`](https://www.npmjs.com/package/@ngneat/spectator). Versioning restarts at `1.0.0`; for the full history of the upstream package, see the entries below.
