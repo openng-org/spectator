@@ -27,9 +27,9 @@
       "aliases": ["ps"]
     },
     "ngneat-to-openng": {
-      "description": "Convert ngneat/spectator to openng/spectator",
-      "factory": "./ngneatToOpenng/index#migrate",
-      "schema": "./ngneatToOpenng/schema.json",
+      "description": "Convert @ngneat/spectator to @openng/spectator",
+      "factory": "./ngneat-to-openng/index#migrate",
+      "schema": "./ngneat-to-openng/schema.json",
       "aliases": ["nto"]
     }
   }

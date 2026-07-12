@@ -16,6 +16,7 @@ const schematics = build({
   loader: {
     '.json': 'copy',
     '.template': 'copy',
+    '.md': 'empty',
   },
   minify: false,
   outdir: resolve(__dirname, distPath),
@@ -52,7 +53,7 @@ async function removeFromDistSchematics(patterns) {
 schematics
   .then(async () => {
     // Remove unwanted artifact form the build
-    await removeFromDistSchematics(['*.config.js', '**/*.spec.js', '__mocks__']);
+    await removeFromDistSchematics(['*.config.js', '**/*.spec.js', '__mocks__', "**/*.md"]);
   })
   .catch((e) => {
     console.error(e);
