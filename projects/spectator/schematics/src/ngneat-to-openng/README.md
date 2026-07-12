@@ -8,8 +8,9 @@ This migration scans every TypeScript file in your project (excluding `node_modu
 
 - Finds all TypeScript files (`.ts`) in your project
 - Skips files inside `node_modules` and `dist` directories
-- Replaces `from '@ngneat/spectator'` with `from '@openng/spectator'` in import and export declarations
+- Replaces `from '@ngneat/spectator/<testRunner>'` with `from '@openng/spectator/<testRunner>'` in import and export declarations
 - Preserves all named imports (e.g., `createComponentFactory`, `Spectator`, etc.)
+- Remove `@ngneat/spectator` for the `package.json`
 
 ## How to run this migration?
 

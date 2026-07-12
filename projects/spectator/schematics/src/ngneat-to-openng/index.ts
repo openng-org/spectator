@@ -1,4 +1,6 @@
 import { SchematicContext, Tree, type UpdateRecorder } from '@angular-devkit/schematics';
+import { removePackageJsonDependency } from '@schematics/angular/utility/dependencies';
+import { NodePackageInstallTask } from '@angular-devkit/schematics/tasks/index.js';
 import type { SourceFile } from 'typescript';
 import * as ts from 'typescript';
 
@@ -47,14 +49,14 @@ function visiteFactory(
 
 export function migrate() {
   return (tree: Tree, context: SchematicContext) => {
+    // Update the import
     tree.visit((filePath, entry) => {
-      // Early return if the file is not a TypeScript file or if the entry is null
-      if (!entry || !filePath.endsWith('.ts')) {
-        return;
-      }
-
       // Early return if the file is in node_modules or dist directories
       if (filePath.includes('node_modules') || filePath.includes('dist')) {
+        return;
+      }
+      // Early return if the file is not a TypeScript file or if the entry is null
+      if (!entry || !filePath.endsWith('.ts')) {
         return;
       }
 
@@ -70,5 +72,9 @@ export function migrate() {
         tree.commitUpdate(recorder);
       }
     });
+
+    // Update the package.json to remove @ngneat/spectator dependencies
+    removePackageJsonDependency(tree, '@ngneat/spectator');
+    context.addTask(new NodePackageInstallTask());
   };
 }

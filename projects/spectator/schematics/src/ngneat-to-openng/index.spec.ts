@@ -79,6 +79,19 @@ describe('ngneat-to-openng', () => {
 
   beforeEach(() => {
     tree = Tree.empty();
+    tree.create(
+      'package.json',
+      JSON.stringify({
+        name: 'app',
+        version: '0.0.0',
+        dependencies: {
+          '@ngneat/spectator': '^22.1.0',
+        },
+        devDependencies: {
+          '@ngneat/spectator': '^22.1.0',
+        },
+      }),
+    );
   });
 
   describe('ngneat/directive', () => {
@@ -223,6 +236,15 @@ describe('ngneat-to-openng', () => {
       expect(content).toContain(`from '${resolveOpenNgModule(testRunner)}'`);
       expect(content).not.toContain(`from '${resolveNgNeatModule(testRunner)}'`);
       expect(content).toContain(`import { createComponentFactory, Spectator }`);
+    });
+  });
+
+  describe('package.json', () => {
+    it('should remove ngneat dependencies', async () => {
+      const result = await runner.runSchematic('nto', {}, tree);
+      const content = result.readContent('package.json');
+
+      expect(content).not.toContain('@ngneat/spectator');
     });
   });
 
