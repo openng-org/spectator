@@ -52,9 +52,9 @@
     },
     "changeDetection": {
       "description": "The change detection strategy to use in the new component.",
-      "enum": ["Default", "OnPush"],
+      "enum": ["Eager", "OnPush"],
       "type": "string",
-      "default": "Default",
+      "default": "OnPush",
       "alias": "c"
     },
     "prefix": {
