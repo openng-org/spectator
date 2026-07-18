@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig.spec.json",
+  "compilerOptions": {
+    "types": [
+      "jasmine",
+      "node"
+    ]
+  },
+  "files": [
+    "test/test.ts"
+  ],
+  "include": [
+    "test/**/*.spec.ts",
+    "test/matchers-types.d.ts"
+  ]
+}

@@ -1,9 +1,9 @@
 import { AbstractType, InjectionToken, Type } from '@angular/core';
 import {
-  createInjectionContextFactory as baseInjectionContextFactory,
-  SpectatorInjectionContextOverrides,
-  SpectatorInjectionContextOptions,
-  SpectatorInjectionContext as BaseSpectatorInjectionContext,
+    createInjectionContextFactory as baseInjectionContextFactory,
+    SpectatorInjectionContext as BaseSpectatorInjectionContext,
+    SpectatorInjectionContextOptions,
+    SpectatorInjectionContextOverrides,
 } from '@openng/spectator';
 import { mockProvider, SpyObject } from './mock';
 

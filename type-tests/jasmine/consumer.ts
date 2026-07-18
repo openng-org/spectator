@@ -1,4 +1,4 @@
-import { createComponentFactory, Spectator } from '@openng/spectator';
+import { createComponentFactory, Spectator } from '@openng/spectator/jasmine';
 
 declare const element: HTMLElement;
 declare const option: HTMLOptionElement;
