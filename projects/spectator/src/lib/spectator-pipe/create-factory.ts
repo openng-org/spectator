@@ -1,6 +1,5 @@
 import { Provider, Type } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 
 import { BaseSpectatorOverrides } from '../base/options';
 import { addMatchers } from '../core';
@@ -64,7 +63,7 @@ export function createPipeFactory<P, H = HostComponent>(typeOrOptions: Type<P> |
     }
 
     if (template) {
-      TestBed.overrideModule(BrowserDynamicTestingModule, {}).overrideComponent(options.host, {
+      TestBed.overrideComponent(options.host, {
         set: { template },
       });
     }
