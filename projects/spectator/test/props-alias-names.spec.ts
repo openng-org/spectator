@@ -167,6 +167,39 @@ describe('PropsAliasNames', () => {
     });
   });
 
+  describe('no props', () => {
+    @Component({
+      selector: 'app-root',
+      template: `<div data-test="props--name">{{ name }}</div>`,
+      standalone: true,
+    })
+    class DummyComponent {
+      @Input('userName') public name = 'default';
+    }
+
+    const createComponent = createComponentFactory(DummyComponent);
+
+    it('props should be a no-op when it is explicitly undefined', () => {
+      const spectator = createComponent({ props: undefined });
+
+      expect(spectator.query('[data-test="props--name"]')!.innerHTML).toBe('default');
+    });
+
+    it('props should be a no-op when no overrides are passed at all', () => {
+      const spectator = createComponent();
+
+      expect(spectator.query('[data-test="props--name"]')!.innerHTML).toBe('default');
+    });
+
+    it('setInput should be a no-op when it is given nothing', () => {
+      const spectator = createComponent();
+
+      spectator.setInput(undefined as unknown as Record<string, unknown>);
+
+      expect(spectator.query('[data-test="props--name"]')!.innerHTML).toBe('default');
+    });
+  });
+
   describe('createRoutingFactory', () => {
     @Component({
       selector: 'app-root',
