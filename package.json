@@ -3,23 +3,21 @@
   "license": "MIT",
   "description": "Angular tests made easy",
   "private": true,
-  "workspaces": [
-    "projects/*"
-  ],
+  "packageManager": "pnpm@10.33.1",
   "engines": {
-    "npm": "please-use-yarn",
-    "yarn": ">= 1.22.0"
+    "npm": "please-use-pnpm",
+    "pnpm": ">=10.0.0"
   },
   "scripts": {
     "prepare": "husky install",
     "ng": "ng",
-    "build": "ng build --configuration production && yarn build:schematics && yarn copy:schematics && yarn copy:docs",
+    "build": "ng build --configuration production && pnpm build:schematics && pnpm copy:schematics && pnpm copy:docs",
     "build:schematics": "tsc -p projects/spectator/schematics/tsconfig.json",
     "test": "ng test",
     "test:jest": "ng run spectator:test-jest",
     "test:vitest": "ng run spectator:test-vitest",
     "test:types": "tsc -p type-tests/jasmine && tsc -p type-tests/jest && tsc -p type-tests/vitest",
-    "test:ci": "cross-env NODE_ENV=build yarn test && yarn test:jest --silent && yarn test:vitest",
+    "test:ci": "cross-env NODE_ENV=build pnpm test && pnpm test:jest --silent && pnpm test:vitest",
     "lint": "ng lint",
     "format": "prettier --write \"{projects,src}/**/*.ts\"",
     "commit": "git-cz",
@@ -27,7 +25,7 @@
     "contributors:generate": "all-contributors generate",
     "copy:docs": "cp *.md dist/spectator",
     "copy:schematics": "cp -r projects/spectator/schematics/src/ dist/spectator/schematics",
-    "postbump": "yarn build",
+    "postbump": "pnpm build",
     "release": "cd projects/spectator && standard-version --infile ../../CHANGELOG.md",
     "release:dry": "cd projects/spectator && standard-version --infile ../../CHANGELOG.md --dry-run"
   },

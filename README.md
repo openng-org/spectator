@@ -42,7 +42,7 @@ This fork, published as [`@openng/spectator`](https://www.npmjs.com/package/@ope
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
   - [NPM](#npm)
-  - [Yarn](#yarn)
+  - [pnpm](#pnpm)
 - [Compatibility Matrix](#compatibility-matrix)
 - [Testing Components](#testing-components)
   - [Events API](#events-api)
@@ -93,9 +93,9 @@ This fork, published as [`@openng/spectator`](https://www.npmjs.com/package/@ope
 
 `npm install @openng/spectator --save-dev`
 
-### Yarn
+### pnpm
 
-`yarn add @openng/spectator --dev`
+`pnpm add @openng/spectator --dev`
 
 ## Compatibility Matrix
 
