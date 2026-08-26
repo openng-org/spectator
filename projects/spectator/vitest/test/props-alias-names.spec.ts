@@ -144,17 +144,19 @@ describe('PropsAliasNames', () => {
     })
     class DummyComponent {
       // 'age' is the public name of this input...
-      @Input({ alias: 'age' }) public numOfYears = 0;
-      // ...and the property name of this one.
+      @Input({ alias: 'age' }) public numOfYears = 'no-years';
+      // ...and the property name of this one. Both are strings on purpose: the
+      // type describes the property, so a collision is only expressible when the
+      // two inputs agree on their value type.
       @Input({ alias: 'collided' }) public age = 'untouched';
     }
 
     const createComponent = createComponentFactory(DummyComponent);
 
     it('props should resolve the key as a public name, not as a property name', () => {
-      const spectator = createComponent({ props: { age: 123 } });
+      const spectator = createComponent({ props: { age: 'set-via-public-name' } });
 
-      expect(spectator.query('[data-test="props--years"]')!.innerHTML).toBe('123');
+      expect(spectator.query('[data-test="props--years"]')!.innerHTML).toBe('set-via-public-name');
       expect(spectator.query('[data-test="props--age"]')!.innerHTML).toBe('untouched');
     });
 
