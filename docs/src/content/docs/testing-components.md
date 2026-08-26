@@ -73,6 +73,29 @@ it('should...', () => {
 });
 ```
 
+`props` keys may be either the class property name or the input's public name, so
+an input that declares an alias can be set either way:
+
+```ts
+@Component({ /* ... */ })
+class UserComponent {
+  @Input('userName') name = '';
+  age = input.required<number>({ alias: 'userAge' });
+}
+
+it('should...', () => {
+  // by class property name — type-checked and autocompleted
+  spectator = createComponent({ props: { name: 'John', age: 30 } });
+
+  // ...or by public name
+  spectator = createComponent({ props: { userName: 'John', userAge: 30 } });
+});
+```
+
+Because an alias cannot be derived from the type system, `props` accepts unknown
+string keys. A key that matches no input is reported by Angular at runtime
+(`NG0303`) rather than at compile time.
+
 By providing `overrideComponents` options in scope of our `createComponent()` function we can define the way of overriding standalone component and it's dependencies
 ```ts
 @Component({
@@ -196,7 +219,8 @@ spectator.detectChanges();
 ```
 
 ### `setInput()`
-Changes the value of an `@Input()` of the tested component:
+Changes the value of an `@Input()` of the tested component. As with `props`, an
+input may be addressed by its class property name or by its public name:
 
 ```ts
 it('should...', () => {
@@ -205,6 +229,9 @@ it('should...', () => {
   spectator.setInput({
     className: 'danger'
   });
+
+  // an input declared as `@Input('cssClass') className` answers to both
+  spectator.setInput('cssClass', 'danger');
 });
 ```
 ### `output()`
