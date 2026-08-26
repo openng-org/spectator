@@ -6,7 +6,7 @@ import { BaseSpectatorOptions, BaseSpectatorOverrides } from '../base/options';
 import { addMatchers } from '../core';
 import { setProps } from '../internals/query';
 import * as customMatchers from '../matchers';
-import { InferInputSignals, isType } from '../types';
+import { InferInputProps, isType } from '../types';
 
 import { initialSpectatorModule } from './initial-module';
 import { getSpectatorDefaultOptions, SpectatorOptions } from './options';
@@ -22,7 +22,7 @@ export type SpectatorFactory<C> = (options?: SpectatorOverrides<C>) => Spectator
  */
 export interface SpectatorOverrides<C> extends BaseSpectatorOverrides {
   detectChanges?: boolean;
-  props?: InferInputSignals<C>;
+  props?: InferInputProps<C>;
 }
 
 /**
@@ -185,7 +185,7 @@ export function createComponentFactory<C>(typeOrOptions: Type<C> | SpectatorOpti
   };
 }
 
-function createSpectator<C>(options: Required<SpectatorOptions<C>>, props?: InferInputSignals<C>): Spectator<C> {
+function createSpectator<C>(options: Required<SpectatorOptions<C>>, props?: InferInputProps<C>): Spectator<C> {
   const fixture = TestBed.createComponent(options.component, { bindings: options.bindings });
   const debugElement = fixture.debugElement;
 
