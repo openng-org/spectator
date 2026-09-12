@@ -1,23 +1,17 @@
 {
   "compilerOptions": {
-    "lib": ["es2017", "dom"],
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "strictPropertyInitialization": false,
-    "noEmitOnError": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "noUnusedParameters": true,
+    "target": "es2022",
+    "module": "commonjs",
+    "lib": ["ES2022"],
+    "declaration": true,
+    "strict": true,
     "noUnusedLocals": true,
-    "rootDir": "src/",
-    "skipDefaultLibCheck": true,
+    "noImplicitAny": true,
+    "outDir": "../../../dist/schematics",
+    "rootDir": ".",
     "skipLibCheck": true,
-    "sourceMap": true,
-    "strictNullChecks": true,
-    "target": "ES2020",
-    "types": ["jasmine", "node"]
+    "esModuleInterop": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["src/*/files/**/*"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["**/*.spec.ts", "**/*.js"]
 }

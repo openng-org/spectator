@@ -1,5 +1,4 @@
 import { createPipeFactory, SpectatorPipe } from '@openng/spectator<% if (secondaryEntryPoint) { %>/<%= secondaryEntryPoint%><% } %>';
-
 import { <%= classify(name)%>Pipe } from './<%= dasherize(name)%>.pipe';
 
 describe('<%= classify(name)%>Pipe ', () => {
