@@ -5,6 +5,8 @@ import { DOMSelector } from '../dom-selectors';
 import { isString, QueryOptions, QueryType } from '../types';
 import { type Token } from '../token';
 
+import { inputNameResolver } from './resolve-input-name';
+
 export function getChildren<R>(debugElementRoot: DebugElement): (directiveOrSelector: QueryType, options?: QueryOptions<R>) => R[] {
   return (directiveOrSelector: QueryType, options: QueryOptions<R> = { root: false, read: undefined }): R[] => {
     if (directiveOrSelector instanceof DOMSelector) {
@@ -30,16 +32,19 @@ export function getChildren<R>(debugElementRoot: DebugElement): (directiveOrSele
 /**
  * @internal
  * Set props on a component. This is used in `createComponent` and `createRoutingFactory` since we have direct access to the componentRef.
+ * Keys may be either the class property name or the input's public name, since `ComponentRef.setInput()` only accepts the latter.
  */
 export function setProps<T, K extends string | number | symbol, V>(componentRef: ComponentRef<T>, key: K, value: V): T & { [KEY in K]: V };
 export function setProps<T, KV>(componentRef: ComponentRef<T>, keyValues?: KV): T & KV;
 export function setProps(componentRef: ComponentRef<any>, keyOrKeyValues: any, value?: any): any {
+  const resolveInputName = inputNameResolver(componentRef.componentType);
+
   if (isString(keyOrKeyValues)) {
-    componentRef.setInput(keyOrKeyValues, value);
+    componentRef.setInput(resolveInputName(keyOrKeyValues), value);
   } else {
     // eslint-disable-next-line guard-for-in
     for (const p in keyOrKeyValues) {
-      componentRef.setInput(p, keyOrKeyValues[p]);
+      componentRef.setInput(resolveInputName(p), keyOrKeyValues[p]);
     }
   }
 

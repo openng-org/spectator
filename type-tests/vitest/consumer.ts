@@ -1,4 +1,5 @@
 import { createComponentFactory, Spectator } from '@openng/spectator/vitest';
+import { input } from '@angular/core';
 import { describe, expect, it } from 'vitest';
 
 declare const element: HTMLElement;
@@ -47,6 +48,35 @@ describe('custom DOM matchers are wired into expect()', () => {
     expect(element).toHaveTextBogus('hello');
   });
 });
+
+/**
+ * `props` accepts either the class property name or the input's public name,
+ * since an aliased input is only reachable through its alias at runtime (#15).
+ */
+class AliasedInputsComponent {
+  public name = input.required<string>({ alias: 'userName' });
+  public age = input(0, { alias: 'userAge' });
+}
+
+const createAliasedComponent = createComponentFactory(AliasedInputsComponent);
+
+createAliasedComponent({ props: { name: 'John', age: 30 } });
+createAliasedComponent({ props: { userName: 'John', userAge: 30 } });
+createAliasedComponent({ props: { name: 'John', userAge: 30 } });
+
+// A `props` object typed through an interface has no index signature, so this is
+// the guard against typing `props` as a plain intersection with `Record`.
+interface AliasedProps {
+  name: string;
+}
+declare const aliasedProps: AliasedProps;
+createAliasedComponent({ props: aliasedProps });
+
+// Negative control: value types are still checked for known inputs. This is what
+// distinguishes the shipped type from a plain union with `Record<string, unknown>`,
+// which would accept this silently.
+// @ts-expect-error a string is not assignable to a number input
+createAliasedComponent({ props: { name: 'John', age: 'thirty' } });
 
 // Reference the entry point exports so the import is used and the bundle resolves.
 export type Check = Spectator<unknown>;
