@@ -9,7 +9,8 @@
     "skipLibCheck": true,
     "types": ["jasmine"],
     "paths": {
-      "@openng/spectator": ["../../dist/spectator/types/openng-spectator.d.ts"]
+      "@openng/spectator": ["../../dist/spectator/types/openng-spectator.d.ts"],
+      "@openng/spectator/jasmine": ["../../dist/spectator/types/openng-spectator-jasmine.d.ts"]
     }
   },
   "files": ["consumer.ts"]

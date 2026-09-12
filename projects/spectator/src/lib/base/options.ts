@@ -2,7 +2,7 @@ import { Component, Directive, NgModule, Pipe, Provider, SchemaMetadata, Type } 
 import { DeferBlockBehavior, MetadataOverride, ModuleTeardownOptions } from '@angular/core/testing';
 
 import { merge } from '../internals/merge';
-import { mockProvider, MockProvider } from '../mock';
+import { MockProvider } from '../mock';
 import { OptionalsRequired } from '../types';
 
 /**
@@ -38,7 +38,7 @@ const defaultOptions: OptionalsRequired<BaseSpectatorOptions> = {
   disableAnimations: true,
   entryComponents: [],
   mocks: [],
-  mockProvider,
+  mockProvider: undefined as unknown as MockProvider,
   providers: [],
   declarations: [],
   imports: [],

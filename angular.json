@@ -24,6 +24,23 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
+            "tsConfig": "projects/spectator/src/tsconfig.spec.json",
+            "karmaConfig": "projects/spectator/src/karma.conf.js",
+            "polyfills": [
+              "core-js/es/reflect",
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "include": [
+              "../src/test/test.ts",
+              "../src/test/**/*.spec.ts"
+            ],
+            "watch": false
+          }
+        },
+        "test-jasmine": {
+          "builder": "@angular/build:karma",
+          "options": {
             "tsConfig": "projects/spectator/tsconfig.spec.json",
             "karmaConfig": "projects/spectator/karma.conf.js",
             "polyfills": [
@@ -32,8 +49,8 @@
               "zone.js/testing"
             ],
             "include": [
-              "../test/test.ts",
-              "../test/**/*.spec.ts"
+              "../jasmine/test/test.ts",
+              "../jasmine/test/**/*.spec.ts"
             ],
             "watch": false
           }

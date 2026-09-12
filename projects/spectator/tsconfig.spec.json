@@ -16,17 +16,20 @@
       "@openng/spectator/vitest": [
         "./vitest/src/public_api.ts"
       ],
+      "@openng/spectator/jasmine": [
+        "./jasmine/src/public_api.ts"
+      ],
       "@openng/spectator/internals": [
         "./internals/src/public_api.ts"
       ]
     }
   },
   "files": [
-    "test/test.ts"
+    "jasmine/test/test.ts"
   ],
   "include": [
-    "test/**/*.spec.ts",
-    "src/lib/matchers-types.ts",
+    "jasmine/test/**/*.spec.ts",
+    "jasmine/src/lib/matchers-types.ts",
   ],
   "angularCompilerOptions": {
     "extendedDiagnostics": {

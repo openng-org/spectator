@@ -1,5 +1,5 @@
 {
-  "$schema": "./node_modules/@angular-devkit/schematics/collection-schema.json",
+  "$schema": "../../../../node_modules/@angular-devkit/schematics/collection-schema.json",
   "extends": ["@schematics/angular"],
   "schematics": {
     "spectator-component": {
@@ -25,6 +25,11 @@
       "factory": "./spectator/index#spectatorPipeSchematic",
       "schema": "./spectator/pipe-schema.json",
       "aliases": ["ps"]
+    },
+    "migrate-jasmine-imports": {
+      "description": "Move Jasmine-flavoured Spectator symbols from '@openng/spectator' to the '@openng/spectator/jasmine' entry point",
+      "factory": "./migrations/jasmine-imports/index#migrateJasmineImports",
+      "schema": "./migrations/jasmine-imports/schema.json"
     }
   }
 }

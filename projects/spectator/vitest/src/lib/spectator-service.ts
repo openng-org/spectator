@@ -1,11 +1,10 @@
-import { Type, InjectionToken, AbstractType } from '@angular/core';
+import { AbstractType, InjectionToken, Type } from '@angular/core';
 import {
-  createServiceFactory as baseCreateServiceFactory,
-  isType,
-  SpectatorServiceOverrides,
-  SpectatorServiceOptions,
-  SpectatorService as BaseSpectatorService,
-  Token,
+    createServiceFactory as baseCreateServiceFactory,
+    SpectatorService as BaseSpectatorService,
+    isType,
+    SpectatorServiceOptions,
+    SpectatorServiceOverrides
 } from '@openng/spectator';
 
 import { mockProvider, SpyObject } from './mock';

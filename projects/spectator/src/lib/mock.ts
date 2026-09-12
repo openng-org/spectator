@@ -8,7 +8,9 @@ declare type UnknownFunction = (...args: any[]) => any;
 /**
  * @publicApi
  */
-export interface CompatibleSpy<F extends UnknownFunction = UnknownFunction> extends jasmine.Spy<(...args: Parameters<F>) => ReturnType<F>> {
+export interface CompatibleSpy<F extends UnknownFunction = UnknownFunction> {
+  (...args: Parameters<F>): ReturnType<F>;
+
   /**
    * By chaining the spy with and.returnValue, all calls to the function will return a specific
    * value.
@@ -71,34 +73,4 @@ export function installProtoMethods<T>(mock: any, proto: any, createSpyFn: Funct
 /**
  * @publicApi
  */
-export function createSpyObject<T>(type: Type<T> | AbstractType<T>, template?: Partial<Record<keyof T, any>>): SpyObject<T> {
-  const mock: any = { ...template };
-
-  installProtoMethods<T>(mock, type.prototype, (name) => {
-    const newSpy: jasmine.Spy & Partial<CompatibleSpy> = jasmine.createSpy(name);
-    newSpy.andCallFake = (fn: (...args: any[]) => any) => <any>newSpy.and.callFake(fn);
-    newSpy.andReturn = (val) => newSpy.and.returnValue(val);
-    newSpy.reset = () => newSpy.calls.reset();
-    // revisit return null here (previously needed for rtts_assert).
-    newSpy.and.returnValue(null);
-
-    return newSpy;
-  });
-
-  return mock;
-}
-
-/**
- * @publicApi
- */
-export function mockProvider<T>(type: Type<T> | AbstractType<T>, properties?: Partial<Record<keyof T, any>>): FactoryProvider {
-  return {
-    provide: type,
-    useFactory: () => createSpyObject(type, properties),
-  };
-}
-
-/**
- * @publicApi
- */
-export type MockProvider = typeof mockProvider;
+export type MockProvider = <T>(type: Type<T> | AbstractType<T>, properties?: Partial<Record<keyof T, any>>) => FactoryProvider;

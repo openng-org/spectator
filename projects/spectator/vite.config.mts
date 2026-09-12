@@ -8,7 +8,7 @@ import * as path from 'node:path';
 export default defineConfig(({ mode }) => ({
   plugins: [
     angular({tsconfig: path.join(import.meta.dirname, '/vitest/tsconfig.spec.json')}),
-    tsconfigPaths()
+    tsconfigPaths({ ignoreConfigErrors: true })
   ],
   test: {
     globals: true,

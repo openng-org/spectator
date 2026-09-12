@@ -1,8 +1,7 @@
-import { createHostFactory } from '@openng/spectator/jest';
-import { mockProvider } from '@openng/spectator';
+import { createHostFactory, mockProvider } from '@openng/spectator/jest';
 
-import { ComponentWithoutOverwrittenProvidersComponent } from '../../../test/no-overwritten-providers/no-overwritten-providers.component';
 import { DummyService } from '../../../test/no-overwritten-providers/dummy.service';
+import { ComponentWithoutOverwrittenProvidersComponent } from '../../../test/no-overwritten-providers/no-overwritten-providers.component';
 
 describe('ComponentWithoutOverwrittenProvidersComponent', () => {
   describe('with options', () => {
