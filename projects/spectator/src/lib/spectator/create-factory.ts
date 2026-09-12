@@ -1,6 +1,5 @@
 import { Component, isStandalone, Provider, reflectComponentType, Type } from '@angular/core';
 import { MetadataOverride, TestBed } from '@angular/core/testing';
-import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
 
 import { BaseSpectatorOptions, BaseSpectatorOverrides } from '../base/options';
 import { addMatchers } from '../core';
@@ -151,7 +150,7 @@ export function createComponentFactory<C>(typeOrOptions: Type<C> | SpectatorOpti
 
   beforeEach(() => {
     addMatchers(customMatchers);
-    TestBed.configureTestingModule(moduleMetadata).overrideModule(BrowserDynamicTestingModule, {});
+    TestBed.configureTestingModule(moduleMetadata);
 
     overrideModules(options);
     overrideComponents(options);
