@@ -14,7 +14,7 @@ import {
   overridePipes,
   SpectatorOverrides,
 } from '../spectator/create-factory';
-import { InferInputSignals, isType } from '../types';
+import { InferInputProps, isType } from '../types';
 
 import { SpyObject } from '../mock';
 import { ActivatedRouteStub } from './activated-route-stub';
@@ -93,7 +93,7 @@ export function createRoutingFactory<C>(typeOrOptions: Type<C> | SpectatorRoutin
   };
 }
 
-function createSpectatorRouting<C>(options: Required<SpectatorRoutingOptions<C>>, props?: InferInputSignals<C>): SpectatorRouting<C> {
+function createSpectatorRouting<C>(options: Required<SpectatorRoutingOptions<C>>, props?: InferInputProps<C>): SpectatorRouting<C> {
   const fixture = TestBed.createComponent(options.component, { bindings: options.bindings });
   const debugElement = fixture.debugElement;
 
