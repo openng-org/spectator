@@ -1,5 +1,5 @@
 {
-  "$schema": "./node_modules/@angular-devkit/schematics/collection-schema.json",
+  "$schema": "../../../../node_modules/@angular-devkit/schematics/collection-schema.json",
   "extends": ["@schematics/angular"],
   "schematics": {
     "spectator-component": {
@@ -25,6 +25,12 @@
       "factory": "./spectator/index#spectatorPipeSchematic",
       "schema": "./spectator/pipe-schema.json",
       "aliases": ["ps"]
+    },
+    "ngneat-to-openng": {
+      "description": "Convert @ngneat/spectator to @openng/spectator",
+      "factory": "./ngneat-to-openng/index#migrate",
+      "schema": "./ngneat-to-openng/schema.json",
+      "aliases": ["nto"]
     }
   }
 }

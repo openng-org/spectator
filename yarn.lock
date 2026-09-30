@@ -7658,12 +7658,19 @@ es-object-atoms@^1.0.0, es-object-atoms@^1.1.1:
   dependencies:
     es-errors "^1.3.0"
 
+esbuild-plugin-tsc@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/esbuild-plugin-tsc/-/esbuild-plugin-tsc-0.6.0.tgz#0df768cc5b7e83e249c359393ff4e7c33d569d4f"
+  integrity sha512-j26KTBbDSXOzG+8Wh/YgGg6SGCPH1i8JZT1sATT+ED0mHfGpqb1iOHOUvfZry5rRu3Ue0LE9rX1ImkHLawwlgA==
+  dependencies:
+    strip-comments "^2.0.1"
+
 esbuild-wasm@0.28.1, esbuild-wasm@>=0.28.0:
   version "0.28.1"
   resolved "https://registry.yarnpkg.com/esbuild-wasm/-/esbuild-wasm-0.28.1.tgz#b173826abdc645419c3c7ac77e2d9128286a7a79"
   integrity sha512-p/GD4E8oYRjg3kjdKrnMb0s4PzXgJF42e0MF4H0+ACyK/kIlFRp3e0fzOleIG+wBBm6MM3XQrbpe7soEA+vJIA==
 
-esbuild@0.28.1, esbuild@>=0.28.0, esbuild@^0.28.0:
+esbuild@0.28.1, esbuild@>=0.28.0, esbuild@^0.28.0, esbuild@^0.28.1:
   version "0.28.1"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.28.1.tgz#ef45b4634c9c9d97a296aea4114a5f9840f95578"
   integrity sha512-HrJrvZv5ayxBzPfwphOoNzkzOIIlifzk0KJrGK2c8R4+LKpMtpYLQeUdjnwjWv/LZlkH2laZk+4w78pi99D4Vw==
@@ -13411,6 +13418,11 @@ strip-bom@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/strip-bom/-/strip-bom-3.0.0.tgz"
   integrity "sha1-IzTBjpx1n3vdVv3vfprj1YjmjtM= sha512-vavAMRXOgBVNF6nyEEmL3DBK19iRpDcoIwW+swQ+CbGiu7lju6t+JklA1MHweoWtadgt4ISVUsXLyDq34ddcwA=="
+
+strip-comments@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/strip-comments/-/strip-comments-2.0.1.tgz#4ad11c3fbcac177a67a40ac224ca339ca1c1ba9b"
+  integrity sha512-ZprKx+bBLXv067WTCALv8SSz5l2+XhpYCsVtSqlMnkAXMWDq+/ekVbl1ghqP9rUHTzv6sm/DwCOiYutU/yp1fw==
 
 strip-final-newline@^2.0.0:
   version "2.0.0"

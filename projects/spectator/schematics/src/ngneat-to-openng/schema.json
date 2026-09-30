@@ -1,0 +1,6 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "ngneatToOpenng",
+  "title": "Migration from @ngneat/spectator to @openng/spectator Options Schema",
+  "description": "Automatic migration of import of @ngneat/spectator to @openng/spectator"
+}
