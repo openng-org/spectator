@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/openng-org/spectator/compare/v1.0.1...v1.0.2) (2026-10-06)
+
+
+### Bug Fixes
+
+* remove BrowserDynamicTestingModule override ([#13](https://github.com/openng-org/spectator/issues/13)) ([28bc244](https://github.com/openng-org/spectator/commit/28bc24447d92f458ef28c70fb49154a06b2b46c9))
+* **spectator:** resolve input aliases in props and setInput ([#16](https://github.com/openng-org/spectator/issues/16)) ([12fbbeb](https://github.com/openng-org/spectator/commit/12fbbeb79038d03230d09761ba4efb27d2443afd)), closes [#15](https://github.com/openng-org/spectator/issues/15) [#15](https://github.com/openng-org/spectator/issues/15) [#15](https://github.com/openng-org/spectator/issues/15) [#15](https://github.com/openng-org/spectator/issues/15) [#8](https://github.com/openng-org/spectator/issues/8) [#11](https://github.com/openng-org/spectator/issues/11) [#15](https://github.com/openng-org/spectator/issues/15) [#15](https://github.com/openng-org/spectator/issues/15) [#15](https://github.com/openng-org/spectator/issues/15) [#15](https://github.com/openng-org/spectator/issues/15)
+
 ### [1.0.1](https://github.com/openng-org/spectator/compare/v1.0.0...v1.0.1) (2026-07-10)
 
 
